@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ice-Group</title>
+    <link rel="shortcut icon" href="static/imgs/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <header class="d-flex">
+        <nav class="navbar navbar-expand-lg navbar-light w-75 m-auto bg-white border-bottom">
+            <a class="navbar-brand d-flex align-items-end nav-link" href="{% url 'main' %}">
+                <img class="pb-2" src="static/imgs/logo.png" alt="Логотип" width="60">
+                <h1 class="">Ice-Group</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex justify-content-between collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto d-flex mt-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'main' %}"><h4 class="">Главная</h4></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'catalog' %}"><h4 class="">Каталог</h4></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacts' %}"><h4 class="">Контакты</h4></a>
+                    </li>
+                </ul>
+                <div class="mt-3 btn btn-light border-secondary">
+                    Оставить заявку
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+    
+    {% endblock %}
+
+    <footer class="w-75 m-auto border-top mt-5 py-3">
+        <a class="navbar-brand d-flex align-items-end nav-link" href="{% url 'main' %}">
+            <img class="pb-2" src="static/imgs/logo.png" alt="Логотип" width="40">
+            <h3 class="">Ice-Group</h3>
+        </a>
+        <div class="container">
+            <div class="row w-100">
+                <div class="col">
+                    <h4>Каталог</h4>
+                    <ul>
+
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4></h4>
+                </div>
+                <div class="col">
+                    <h4>Контакты</h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Подключение jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Подключение Popper.js (необходим для некоторых компонентов Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+
+<!-- Подключение JavaScript файлов Bootstrap -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
