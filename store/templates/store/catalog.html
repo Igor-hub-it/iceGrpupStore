@@ -6,112 +6,123 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    .link:hover {
+        box-shadow: 0px 10px 14px 2px rgba(34, 60, 80, 0.2);
+        transition: 0.7s;
+    }
+    .link {
+        shadow: 0px;
+        transition: 0.4s;
+        text-decoration: none;
+    }
+</style>
 <body>
-    <div class="w-75 m-auto">
+    <div class="w-75 m-auto mt-5">
         <div class="row">
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Шкафы холодильные</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'cooling_cabinet' %}">
+                    <img width="80%" src="/static/imgs/Шкафы_холодильные.png" alt="">
+                    <h5 class="text-center text-black">Шкафы холодильные</h5>
                 </a>
             </div>
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Холодильные камеры</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'refrigerator' %}">
+                    <img width="80%" src="/static/imgs/Камеры_холодильные.png" alt="">
+                    <h5 class="text-center text-black">Холодильные камеры</h5>
                 </a>
             </div>
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Морозильные лари</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'freezer_chest' %}">
+                    <img width="80%" src="/static/imgs/Лари_морозильные.png" alt="">
+                    <h5 class="text-center text-black">Морозильные лари</h5>
                 </a>
             </div>
             <div class="col">
-                <a class="nav-link" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Моноблоки</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'monoblock' %}">
+                    <img width="80%" src="/static/imgs/моноблок.png" alt="">
+                    <h5 class="text-center text-black">Моноблоки</h5>
                 </a>
             </div>
         </div>
-        <div class="row">
+        <div class="row align-items-stretch mt-3">
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Витрины</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'showcase' %}">
+                    <img width="80%" src="/static/imgs/витрины_холодильные.png" alt="">
+                    <h5 class="text-center text-black">Витрины</h5>
                 </a>
             </div>
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Кондиционеры</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'conditioners' %}">
+                    <img width="80%" src="/static/imgs/кондиционер.png" alt="">
+                    <h5 class="text-center text-black">Кондиционеры</h5>
                 </a>
             </div>
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Мобильные Кондиционеры</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'mobileAirConditioners' %}">
+                    <img width="80%" src="/static/imgs/мобильный_кондиционер.png" alt="">
+                    <h5 class="text-center text-black">Моб. кондиционеры</h5>
                 </a>
             </div>
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Выпечка</h5>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Тепловое оборудование</h5>
-                </a>
-            </div>
-            <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Пароконвектоматы</h5>
-                </a>
-            </div>
-            <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Конвекционные печи</h5>
-                </a>
-            </div>
-            <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Механическое оборудование</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'bakery' %}">
+                    <img width="80%" src="/static/imgs/тестомес (1).png" alt="">
+                    <h5 class="text-center text-black">Выпечка</h5>
                 </a>
             </div>
         </div>
-        <div class="row">
+        <div class="row align-items-stretch mt-3">
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Оборудование ФАСТ-ФУД</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'thermalEquipment' %}">
+                    <img width="80%" src="/static/imgs/плита.png" alt="">
+                    <h5 class="text-center text-black">Тепловое оборудование</h5>
                 </a>
             </div>
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Посудомоечное оборудование</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'combiSteamers' %}">
+                    <img width="80%" src="/static/imgs/пароконвектомат.png" alt="">
+                    <h5 class="text-center text-black">Пароконвектоматы</h5>
                 </a>
             </div>
             <div class="col">
-                <a class="" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Нейтральное оборудование</h5>
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'convectionOvens' %}">
+                    <img width="80%" src="/static/imgs/конвекционка.png" alt="">
+                    <h5 class="text-center text-black">Конвекционные печи</h5>
                 </a>
             </div>
-            <a class="col">
-                <a class="nav-link border rounded" href="{% url 'main' %}">
-                    <img src="" alt="">
-                    <h5 class="text-center">Стеллажи</h5>
+            <div class="col">
+                <a class="link d-flex flex-column align-items-center rounded-4" href="{% url 'catalog' 'mechanicalEquipment' %}">
+                    <img width="80%" src="/static/imgs/мясорубка.png" alt="">
+                    <h5 class="text-center text-black">Механическое оборудование</h5>
                 </a>
-            </a>
+            </div>
         </div>
+{#        <div class="row">#}
+{#            <div class="col">#}
+{#                <a class="" href="{% url 'catalog' '' %}">#}
+{#                    <img src="" alt="">#}
+{#                    <h5 class="text-center">Оборудование ФАСТ-ФУД</h5>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                <a class="" href="{% url 'catalog' '' %}">#}
+{#                    <img src="" alt="">#}
+{#                    <h5 class="text-center">Посудомоечное оборудование</h5>#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col">#}
+{#                <a class="" href="{% url 'catalog' '' %}">#}
+{#                    <img src="" alt="">#}
+{#                    <h5 class="text-center">Нейтральное оборудование</h5>#}
+{#                </a>#}
+{#            </div>#}
+{#            <a class="col">#}
+{#                <a class="nav-link border rounded" href="{% url 'catalog' '' %}">#}
+{#                    <img src="" alt="">#}
+{#                    <h5 class="text-center">Стеллажи</h5>#}
+{#                </a>#}
+{#            </a>#}
+{#        </div>#}
     </div>
 {#    <div class="w-75 m-auto d-flex justify-content-between">#}
 {#        <div class="">#}

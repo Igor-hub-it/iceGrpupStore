@@ -1,0 +1,31 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespw
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:postgrespw@db/postgres
+  nginx:
+    image: jonasal/nginx-certbot
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - nginx_secrets:/etc/letsencrypt
+      - ./user_conf.d:/etc/nginx/user_conf.d
+    environment:
+      - DOMAIN=tattoo-cube.ru
+      - EMAIL=igorpigidin@gmail.com
+      - CERTBOT_EMAIL=igorpigidin@gmail.com
+volumes:
+  nginx_secrets:

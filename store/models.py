@@ -1,11 +1,16 @@
 from django.db import models
 
 
-class CoolingCabinet(models.Model):
+class BaseProduct(models.Model):
     name = models.CharField()
     width = models.IntegerField()
     height = models.IntegerField()
     depth = models.IntegerField()
+    img = models.ImageField(upload_to='photos', blank=True)
+    # Общие поля для всех товаров
+
+
+class CoolingCabinet(BaseProduct):
     volume = models.IntegerField()
 
     def __str__(self):
@@ -16,11 +21,7 @@ class CoolingCabinet(models.Model):
         verbose_name_plural = 'Шкафы холодильные'
 
 
-class Refrigerator(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class Refrigerator(BaseProduct):
     volume = models.IntegerField()
     # internal =
     power = models.IntegerField()
@@ -33,11 +34,7 @@ class Refrigerator(models.Model):
         verbose_name_plural = 'Холодильные камеры'
 
 
-class FreezerChest(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class FreezerChest(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -50,11 +47,7 @@ class FreezerChest(models.Model):
         verbose_name_plural = 'Морозильные лари'
 
 
-class Monoblock(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class Monoblock(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -67,11 +60,7 @@ class Monoblock(models.Model):
         verbose_name_plural = 'Моноблоки'
 
 
-class Showcase(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class Showcase(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -84,11 +73,7 @@ class Showcase(models.Model):
         verbose_name_plural = 'Витрины'
 
 
-class Conditioner(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class Conditioner(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -101,11 +86,7 @@ class Conditioner(models.Model):
         verbose_name_plural = 'Кондиционеры'
 
 
-class MobileConditioner(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class MobileConditioner(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -118,11 +99,7 @@ class MobileConditioner(models.Model):
         verbose_name_plural = 'Мобильные Кондиционеры'
 
 
-class Bakery(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class Bakery(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -135,11 +112,7 @@ class Bakery(models.Model):
         verbose_name_plural = 'Выпечка'
 
 
-class ThermalEquipment(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class ThermalEquipment(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -152,11 +125,7 @@ class ThermalEquipment(models.Model):
         verbose_name_plural = 'Тепловое оборудование'
 
 
-class CombiSteamer(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class CombiSteamer(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -169,11 +138,7 @@ class CombiSteamer(models.Model):
         verbose_name_plural = 'Пароконвектоматы'
 
 
-class ConvectionOven(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class ConvectionOven(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
@@ -186,11 +151,7 @@ class ConvectionOven(models.Model):
         verbose_name_plural = 'Конвекционные печи'
 
 
-class MechanicalEquipment(models.Model):
-    name = models.CharField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    depth = models.IntegerField()
+class MechanicalEquipment(BaseProduct):
     volume = models.IntegerField()
     temperatureRangeFrom = models.IntegerField()
     temperatureRangeTo = models.IntegerField()
