@@ -23,9 +23,9 @@ services:
     volumes:
       - nginx_secrets:/etc/letsencrypt
       - ./user_conf.d:/etc/nginx/user_conf.d
-    environment:
-      - DOMAIN=tattoo-cube.ru
-      - EMAIL=igorpigidin@gmail.com
-      - CERTBOT_EMAIL=igorpigidin@gmail.com
+#    environment:
+#      - DOMAIN=tattoo-cube.ru
+#      - EMAIL=igorpigidin@gmail.com
+#      - CERTBOT_EMAIL=igorpigidin@gmail.com
 volumes:
   nginx_secrets:
