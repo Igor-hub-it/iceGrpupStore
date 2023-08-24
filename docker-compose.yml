@@ -15,3 +15,27 @@ services:
       - db
     environment:
       DATABASE_URL: postgres://postgres:postgrespw@db/postgres
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"  # Map port 80 of Nginx to port 8080 on host
+    depends_on:
+      - web
+    command: >
+      sh -c "
+      echo 'worker_processes 1;
+      events {
+          worker_connections 1024;
+      }
+      http {
+          sendfile on;
+          server {
+              listen 80;
+              server_name localhost;
+              location /static/ {
+                  alias /app/static/;
+              }
+          }
+      }' > /etc/nginx/nginx.conf
+      nginx -g 'daemon off;'
+      "
