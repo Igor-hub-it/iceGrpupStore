@@ -62,22 +62,22 @@ WSGI_APPLICATION = 'iceGroupStore.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgrespw',
-        'HOST': 'localhost',
-        'PORT': '49153',
-    },
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'ENGINE': 'django.db.backends.postgresql',
     #     'NAME': 'postgres',
     #     'USER': 'postgres',
     #     'PASSWORD': 'postgrespw',
-    #     'HOST': 'db',
-    #     'PORT': '5432'
-    # }
+    #     'HOST': 'localhost',
+    #     'PORT': '49153',
+    # },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgrespw',
+        'HOST': 'db',
+        'PORT': '5432'
+    }
 }
 
 # Password validation
