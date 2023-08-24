@@ -15,17 +15,3 @@ services:
       - db
     environment:
       DATABASE_URL: postgres://postgres:postgrespw@db/postgres
-  nginx:
-    image: jonasal/nginx-certbot
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - nginx_secrets:/etc/letsencrypt
-      - ./user_conf.d:/etc/nginx/user_conf.d
-#    environment:
-#      - DOMAIN=tattoo-cube.ru
-#      - EMAIL=igorpigidin@gmail.com
-#      - CERTBOT_EMAIL=igorpigidin@gmail.com
-volumes:
-  nginx_secrets:
