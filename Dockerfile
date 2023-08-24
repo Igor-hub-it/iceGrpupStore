@@ -20,6 +20,6 @@ COPY . /app
 # Set environment variables
 ENV PYTHONUNBUFFERED 1
 
-RUN python manage.py collectstatic -y
+RUN python manage.py collectstatic --noinput
 # Run the command
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
