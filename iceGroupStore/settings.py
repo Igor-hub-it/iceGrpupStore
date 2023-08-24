@@ -62,22 +62,22 @@ WSGI_APPLICATION = 'iceGroupStore.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgrespw',
+        'HOST': 'localhost',
+        'PORT': '49153',
+    },
     # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
     #     'NAME': 'postgres',
     #     'USER': 'postgres',
     #     'PASSWORD': 'postgrespw',
     #     'HOST': 'db',
-    #     'PORT': '49153',
-    # },
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgrespw',
-        'HOST': 'db',
-        'PORT': '5432'
-    }
+    #     'PORT': '5432'
+    # }
 }
 
 # Password validation
@@ -118,7 +118,7 @@ MEDIA_URL = '/media/'
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'iceGroupStore/static')
+    os.path.join(BASE_DIR, 'iceGroupStore/static'),
 ]
 
 # Default primary key field type
